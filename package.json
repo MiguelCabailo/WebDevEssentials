@@ -1,0 +1,23 @@
+{
+  "name": "webinterview",
+  "dependencies": {
+    "express": "*",
+    "nodemon": "*",
+    "sass": "^1.9.2"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "description": "Web Dev Essentials Advanced",
+  "main": "app.js",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

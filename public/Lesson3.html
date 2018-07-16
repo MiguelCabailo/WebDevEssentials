@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Lesson 4 IIFE</title>
+    <meta charset="UTF-8">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>IIFE</h1>
+    <ul>
+        <li>convention in javascript to protect variables</li>
+        <li>execute code immediately</li>
+        <li>
+            <code>
+            (function() {<br>
+            //Isolate Code Here<br>
+            })();<br></code>
+            <ul>
+                <li>there is a parenthesis around the function</li>
+                <li>this becomes an expression, it yields a value</li>
+                <li>invoked immediately</li>
+                <li>want to protect the variables so it creates closures</li>
+                <li>functions remember variables they are created in</li>
+                <li>an annonymous function(closure)</li>
+                <li>like (1+2)*5. the parenthesis is done first and is separated</li>
+            </ul>
+        </li>
+        <li>
+            <code>
+            function enclose (){<br>
+            }<br>
+            enclose();
+            </code>
+        </li>
+        <li>
+            <code>
+            var enclose = function (){<br>
+            }();
+            </code>
+            <p> this is an annonymous function that is invoked right away. There is a name but it is not needed sometimes,
+                but that name can not be taken out without an exception</p>
+        </li>
+        <li>
+            <code>
+                (function(){<br>
+                })();
+            </code>
+            <p>this is an annonymous closure. all the code above are equivalents</p>
+        </li>
+    </ul>
+
+    <div class="boxes">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<html id="flexBox">
+
+<head>
+    <title>7 FlexBox</title>
+    <meta charset="UTF-8">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Flexbox</h1>
+        <ul>
+            <li>specify display property on a parent to control child elements will display to that parent</li>
+            <li>can specify a specific child but mostly work with the parent element</li>
+        </ul>
+
+        <h2>Horizontal Alignment</h2>
+        <ul>
+            <li><b>Parent-</b><code>display: flex;</code></li>
+            <li>then the children will be a flex component</li>
+            <li><code>flex-direction: DIR;</code></li>
+                <ul>
+                    <li>default: row, column, row-reverse, column-reverse</li>
+                </ul>
+            <li>flex-wrap: WRP;</li>
+                <ul>
+                    <li>specify if the items wrap (break to another line or just compress)</li>
+                    <li>default: nowrap, wrap, wrap-reverse</li>
+                </ul>
+            <li>justify-content: JUS;
+                <ul>
+                    <li>default: flex-start which is left aligned, etc</li>
+                </ul>
+            </li>
+        </ul>
+
+        <nav class="nav" role="navigation">
+            <div class="container">
+              <div class="navbar">
+                <a href="#profile">profile</a>
+                <a href="#history">history</a>
+                <a href="#schedule">schedule</a>
+                <a href="#ask">ask a vet</a>
+                <a href="#showcase">showcase</a>
+              </div><!-- navbar -->
+            </div>
+          </nav><!-- nav -->
+
+
+    </div>
+</body>
+
+</html>

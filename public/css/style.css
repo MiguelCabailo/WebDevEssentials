@@ -1,0 +1,348 @@
+/*
+    BootStrap Styles
+*/
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0; }
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px; }
+
+.carousel-inner img {
+  width: 100%;
+  /* Set width to 100% */
+  margin: auto;
+  min-height: 200px; }
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none; } }
+
+.navbar-collapse {
+  padding-left: 0; }
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.btn {
+  margin: 5px; }
+
+/*
+  End of Bootstrap Styles
+*/
+html#indexHTML .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.align90 {
+  width: 90% !important;
+  margin-right: auto !important;
+  margin-left: auto !important; }
+
+.content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
+
+html#relativeAbsolute body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 150%;
+  margin: 0;
+  padding: 0;
+  width: 80%; }
+
+html#relativeAbsolute .container {
+  width: 80%;
+  margin: 0 auto; }
+
+html#relativeAbsolute .btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1rem;
+  line-height: 1.42857143;
+  text-align: center;
+  cursor: pointer;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #37a097;
+  position: relative; }
+
+html#relativeAbsolute .tooltips {
+  background: rgba(238, 201, 88, 0.9);
+  color: black;
+  z-index: 1;
+  padding: 6px 12px;
+  border-radius: 10px 10px 10px 0;
+  white-space: nowrap;
+  display: none;
+  position: absolute; }
+
+html#relativeAbsolute .btn:hover .tooltips {
+  display: block;
+  bottom: 38px;
+  left: 10px; }
+
+html#callBacks body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 150%;
+  margin: 0;
+  padding: 0;
+  width: 80%; }
+
+html#callBacks .container {
+  width: 80%;
+  margin: 0 auto; }
+
+html#callBacks .btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1rem;
+  line-height: 1.42857143;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #37a097;
+  position: relative; }
+
+html#callBacks .tooltip {
+  background: rgba(238, 201, 88, 0.9);
+  color: black;
+  z-index: 1;
+  padding: 6px 12px;
+  border-radius: 10px 10px 10px 0;
+  white-space: nowrap;
+  position: absolute;
+  display: none;
+  opacity: 1; }
+
+html#callBacks .btn .tooltip.active {
+  display: block;
+  bottom: 40px;
+  left: 10px; }
+
+html#flexBox body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0; }
+
+@media all and (max-width: 600px) {
+  html#flexBox .nav {
+    background-color: #f3efe2;
+    width: 100%; } }
+
+html#flexBox .nav .container {
+  max-width: 1200px; }
+
+@media all and (max-width: 600px) {
+  html#flexBox .nav .container {
+    width: 100%; } }
+
+html#flexBox .nav .navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+@media all and (min-width: 600px) {
+  html#flexBox .nav .navbar {
+    flex-direction: row; } }
+
+html#flexBox .nav .navbar a {
+  color: #e64d1a;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 16px 9px;
+  white-space: nowrap;
+  text-align: center; }
+
+html#flexBox .nav .navbar a:hover {
+  color: #9c3c1c; }
+
+@media all and (max-width: 600px) {
+  html#flexBox .nav .navbar a:hover {
+    background-color: #ede7d4; } }
+
+html#constructor body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0; }
+
+html#constructor .container {
+  width: 80%;
+  margin: 0 auto; }
+
+html#constructor .btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1rem;
+  line-height: 1.42857143;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #37a097;
+  position: relative; }
+
+html#constructor .nav .btn.hamburger {
+  margin: 10px auto;
+  display: none; }
+
+@media all and (max-width: 600px) {
+  html#constructor .nav .btn.hamburger {
+    display: block; } }
+
+html#constructor .nav .container {
+  max-width: 1200px; }
+
+@media all and (max-width: 600px) {
+  html#constructor .nav .container {
+    width: 100%; } }
+
+html#constructor .nav .navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f3efe2; }
+
+@media all and (max-width: 600px) {
+  html#constructor .nav .navbar {
+    flex-direction: row;
+    background: none; } }
+
+@media all and (max-width: 600px) {
+  html#constructor .nav .navbar.hidden {
+    display: none; } }
+
+html#constructor .nav .navbar .btn {
+  margin: 0 auto;
+  text-align: center; }
+
+html#constructor .nav .navbar a {
+  color: #e64d1a;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 16px 9px;
+  white-space: nowrap;
+  text-align: center; }
+
+html#constructor .nav .navbar a:hover {
+  color: #9c3c1c; }
+
+/* hover */
+@media all and (max-width: 600px) {
+  html#constructor .nav .navbar a:hover {
+    background-color: #ede7d4; } }
+
+html#constructor nav.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse; }
+
+html#debugCSS body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0; }
+
+html#debugCSS .container {
+  width: 80%;
+  margin: 0 auto; }
+
+html#debugCSS .btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1rem;
+  line-height: 1.42857143;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #37a097;
+  position: relative; }
+
+html#debugCSS .nav .btn.hamburger {
+  margin: 10px auto;
+  display: none; }
+
+@media all and (max-width: 600px) {
+  html#debugCSS .nav .btn.hamburger {
+    display: block; } }
+
+html#debugCSS .nav .container {
+  max-width: 1200px; }
+
+@media all and (max-width: 600px) {
+  html#debugCSS .nav .container {
+    width: 100%; } }
+
+html#debugCSS .nav .navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f3efe2; }
+
+@media all and (min-width: 600px) {
+  html#debugCSS .nav .navbar {
+    flex-direction: row;
+    background: none; } }
+
+@media all and (max-width: 600px) {
+  html#debugCSS .nav .navbar.hidden {
+    display: none; } }
+
+html#debugCSS .nav .navbar .btn {
+  margin: 0 auto;
+  text-align: center; }
+
+html#debugCSS .nav .navbar a {
+  color: #e64d1a;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 16px 9px;
+  white-space: nowrap;
+  text-align: center; }
+
+html#debugCSS .nav .navbar a:hover {
+  color: #9c3c1c; }
+
+/* hover */
+@media all and (max-width: 600px) {
+  html#debugCSS .nav .navbar a:hover {
+    background-color: #ede7d4; } }
+
+.boxes {
+  display: inline-block; }
+
+.box {
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-color: lightgray;
+  border-radius: 10px;
+  float: left;
+  margin: 5px; }
