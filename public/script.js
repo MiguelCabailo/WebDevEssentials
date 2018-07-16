@@ -31,7 +31,7 @@ var indexHTML = function(){
             location.href = e.target.id;
         });
 
-    })(["ManipulateTargetDom", "Closures", "IIFE's", "RelativeAbsolutePosition", "Callbacks", "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass"],
+    })(["ManipulateTargetDom", "Closures", "IIFE's", "RelativeAbsolutePosition", "Callbacks", "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass", "Git"],
     ["btn-primary", "btn-secondary", "btn-success", "btn-danger", "btn-warning", "btn-info"]);
 }
 
