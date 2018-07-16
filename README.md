@@ -1,4 +1,4 @@
-Web Development Essentials
+# WebDevEssentials
 
 This project is inspired planetoftheweb/masteringcode by Ray Villalobos plus additional topics/insights and research.
 The project is meant for self learning, note taking and application of the various topics.
@@ -22,6 +22,3 @@ Acknowledgements:
 
 Ray Villalobos
 planetoftheweb/masteringcode
-
-
-# WebDevEssentials
