@@ -1,4 +1,4 @@
-<html id="Sass">
+<html id="sass">
 
 <head>
   <title>10 Sass</title>
@@ -39,7 +39,7 @@
               var gulp = require('gulp');
               var sass = require('gulp-sass');
               var nodemon = require('gulp-nodemon');
-      
+              
               gulp.task('serve', ['watch'], function(){
                   return nodemon({
                     script: './app.js',
@@ -60,15 +60,129 @@
               
               // default task
               gulp.task('watch', function(){
-                  gulp.watch('./public/scss/*.scss', ['sass'])
+                  gulp.watch('./public/scss/**/*.scss', ['sass']);
               });
               
-              gulp.task('default', ['serve', 'sass', 'watch']);
+              gulp.task('default', ['serve', 'watch']);
+              
+              
           </pre>
         </li>
         <li><b>serve</b> starts the node demon, <b>sass</b> converts scss to css with the specified paths, <b>watch</b> looks for changes in the specified file and if there is then run the "sass" task</li>
         <li>just use the command <code>gulp</code></li>
       </ul>
+  </ul>
+
+  <h1>Partials</h1>
+  <ul>
+    <li>create a new file to separate css ex. _base.scss</li>
+    <li>import the file by using <cod>@import "base";</cod></li> 
+    <pre>
+        @import "base";
+        @import "mixins";
+        @import "nav";
+    </pre>
+  </ul>
+
+  <h1>Variables in scss</h1>
+  <ul>
+    <li>can have a variables.scsss and put all variables there</li>
+    <li>
+      <pre>
+          $green: hsl(175, 49%, 42%);
+          $orange: hsl(15, 80%, 50%);
+          $beige: hsl(45, 41%, 92%);
+      </pre>
+    </li>
+    <li>These varaibles may now be used in the main scss if it is imported</li>
+    <li>Can also modify the variable values when calling it like so <code>color: darken($orange, 20);</code></li>
+  </ul>
+  
+  <h1>Nesting</h1>
+  <ul>
+    <li>In Sass you can nest everything</li>
+    <li>
+      <pre>
+          html#sass .nav .container {
+            max-width: 1200px;
+            @media all and (max-width: 600px) {
+              width: 100%;
+            }
+          }
+          
+          is the same as:
+
+          html#sass {
+            .nav .container {
+              max-width: 1200px;
+              @media all and (max-width: 600px) {
+                width: 100%;
+             }
+          }
+          
+      </pre>
+    </li>
+    <li>
+      <pre>
+          .navbar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: $beige;
+        
+            @media all and (min-width: 600px) {
+              flex-direction: row;
+              background: none;
+            }
+        
+              
+            // this is a child of .nav but also has a hidden class
+            // same as .nav.hidden no spaces
+            &.hidden {
+              @media all and (max-width: 600px) {
+                display: none;
+              }
+            }
+      </pre>
+    </li>
+  </ul>
+
+  <h1>Mixins</h1>
+  <ul>
+    <li>are like functions</li>
+    <li>
+      <pre>
+
+          // this was the original:
+          // html#sass .btn {}
+          // no include in the second statement
+          @mixin btn ($color) {
+            display: inline-block; 
+            padding: 6px 12px; 
+            font-size: 1rem; 
+            line-height: 1.42857143;
+            outline: none;
+            text-align: center; 
+            cursor: pointer; 
+            background-image: none; 
+            border: none; 
+            border-radius: 4px; 
+            color: #fff; 
+            background-color: $color;
+            position: relative;
+          }
+          
+          html#sass .nav .btn.hamburger {
+            @include btn(orange);
+            margin: 10px auto;
+            display: none;
+            @media all and (max-width: 600px) {
+              display: block;
+            }
+          }
+      </pre>
+      <p>The button styles are now included in the 2nd statement </p>
+    </li>
   </ul>
 
   <nav class="nav" id="topMenu" role="navigation">

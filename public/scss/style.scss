@@ -420,6 +420,12 @@ color: hsl(15, 70%, 36%);
   }
 }
 
+@import "variables";
+@import "base";
+@import "mixins";
+@import "nav";
+
+
 
 
 .boxes {
