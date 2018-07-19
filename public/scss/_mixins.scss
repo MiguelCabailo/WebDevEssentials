@@ -1,4 +1,4 @@
-@mixin btn ($color) {
+@mixin btn($color) {
     display: inline-block; 
     padding: 6px 12px; 
     font-size: 1rem; 
@@ -15,7 +15,8 @@
   }
   
   html#sass .nav .btn.hamburger {
-    @include btn(orange);
+
+    @include btn (darken($orange, 20));
     margin: 10px auto;
     display: none;
     @media all and (max-width: 600px) {
