@@ -1,0 +1,119 @@
+<html id="cssVariables">
+
+<head>
+    <title>12 Css Variables</title>
+    <meta charset="UTF-8">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSS Variables</h1>
+        <ul>
+            <li>is any property with --dashes</li>
+            <li>creat in :root rule and put it in there for it to be a global property. to be local but it in the class, etc</li>
+            <li>Variables are inherited. Declaring the var in the container give makes it available in its children</li>
+            <li>Invalid variable values make the property use the initial one/default</li>
+            <li>This is wrong:  font-size: var(--size)px = 20 px (note the space)</li>
+            <li>background: var(--color, black) you’re saying, set the background to the value of the variable --color . However, if the variable doesn't exist, use the default value of black</li>
+            <li>can update values of variables to create a page "theme"</li>
+
+            <li>regular variables: --yellow</li>
+            <li>custom: @custom</li>
+            <li>usage: var(--yellow), @apply</li>
+            <li>More info: <a>https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855</a></li>
+            <li>
+                <pre>
+                        @media all and (max-width: 600px) {
+                            display: block;
+                        }
+
+                        is the same as:
+
+
+                        :root{
+                            @custom-media --min (width<= 600px);
+                        }
+
+                        @media (--min) {
+                            display: block;
+                          
+                        }
+
+                        Custom Selectors:
+
+                        @custom-selector :--headings h1, h2, h3, h4, h5, h6; }
+                      
+                        :--headings {
+                            margin-top: 0;
+                            margin-bottom: 1rem;
+                            color: red; }
+                </pre>
+            </li>
+            <li>  can create a rule at the :root like for a buttons styles then just @apply --btn on an element;</li>
+        </ul>
+    </div>
+
+    <nav class="nav" id="topMenu" role="navigation">
+
+        <div class="navitems container">
+
+            <button class="btn hamburger">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <div class="navbar">
+                <a href="#profile">profile</a>
+                <a href="#history">history</a>
+                <a href="#schedule">schedule</a>
+                <a href="#ask">ask a vet</a>
+                <a href="#showcase">showcase</a>
+            </div>
+            <!-- navbar -->
+        </div>
+    </nav>
+    <!-- nav -->
+
+    <div class="container">
+        <h2>Our Mission</h2>
+
+        <p>Wisdom Pet Medicine strives to blend the best in traditional and alternative medicine in the diagnosis and treatment
+            of companion animals including dogs, cats, birds, reptiles, rodents, and fish. We apply the wisdom garnered in
+            the centuries old tradition of veterinary medicine, to find the safest treatments and cures.</p>
+
+        <p>We strive to be your pet's medical experts from youth through the senior years. We build preventative health care
+            plans for each and every one of our patients, based on breed, age, and sex, so that your pet receives the most
+            appropriate care at crucial milestones. We want to give your pet a long and healthy life.</p>
+
+    </div>
+
+
+
+    <nav class="nav" id="bottomMenu" role="navigation">
+
+        <div class="navitems container">
+
+            <button class="btn hamburger">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <div class="navbar">
+                <a href="#profile">profile</a>
+                <a href="#history">history</a>
+                <a href="#schedule">schedule</a>
+                <a href="#ask">ask a vet</a>
+                <a href="#showcase">showcase</a>
+            </div>
+            <!-- navbar -->
+        </div>
+    </nav>
+    <!-- nav -->
+    <!-- nav -->
+</body>
+
+</html>

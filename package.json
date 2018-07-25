@@ -1,7 +1,10 @@
 {
   "name": "webinterview",
   "dependencies": {
+    "balanced-match": "^1.0.0",
+    "bootstrap": "^3.3.7",
     "express": "*",
+    "jquery": "^3.3.1",
     "nodemon": "*",
     "sass": "^1.9.2"
   },

@@ -11,29 +11,86 @@
 </head>
 
 <body>
+    <h1>Version Control/Git</h1>
+    <ul>
+        <li>saves the state of code at different times and allows the user to go back to that "commit"</li>
+        <li>branches allow you to work on a different verion of your project, create or test big parts of the code can be branched</li>
+        <li>distributed: can work on the code separately. One person can do CSS, someone on some javascript feature and can merge them all back</li>
+        <li>
+            <ul>
+                <li>stage/commit/branch/merge</li>
+                <li>stage is a temporary placeholder with your code</li>
+                <li>when you are happy with it you can commit and that is the specific save point</li>
+                <li>branch is working on a new feature</li>
+                <li>merge if the branch is approved</li>
+            </ul>
+        </li>
+
+    </ul>
+
     <h1>Setting up the Repository and making first commit</h1>
     <ul>
         <li>Login to Github and create new repo. Accept defaults</li>
+
         <li>Open Git Bash and cd to project folder</li>
+
         <li>initialize local directory as a git repo. Command: <code>git init</code></li>
+
+        <li><code>git status</code> will show the files which are at the moment unstaged</li>
+
         <li>add the files in local repo and stage for commit. Command: <code>git add .</code></li>
-        <li>first commit for the staged files. Command: <code>git commit -m "First Commit"</code></li>
+
+        <li><code>git status</code> should show the new files that are staged, now a commit can be used</li>
+
+        <li>first commit for the staged files. Command: <code>git commit -m "First Commit"</code>. Now the first save point is made and git is tracking changes on those files</li>
+
         <li>add an origin command: <code>git remote add origin (paste github link here)</code></li>
+        
         <li>push branch to master branch in github. Command: <code>git push origin master</code></li>
     </ul>
 
     <h1>Making additional Commits</h1>
         <ul>
-            <li>add the files to be staged <code>git add *</code></li>
+            <li>add the files to be staged <code>git add . or -A</code>.</li>
+            <li>commit files with a message <code>git commit -m "your message"</code></li>
             <li>make a pull request first <code>git pull origin master</code></li>
             <li>make a push request <code>git push origin master</code></li>
         </ul>
 
+        node_modules/balanced-match/README.md
+        
+        p4t.org.au
+
+        tmeasy.com.au
+        - styles
+        - check functionality
+
+    <h1>Make a new brach</h1>
+        <ul>
+            <li>create new branch: <code>git branch new-branch</code></li>
+            <li>switch to it: <code>git checkout new-branch</code>. Output: "Switched to branch 'new-branch'"</li>
+            <li>stage all files: <code>git add -A</code></li>
+            <li>commit with a message: <code>git commit -m "Message"</code> or if you want to use a defualt editor: <code>git commit</code></li>
+            <li>to configure the default editor: <code>git config --global core.editor "editor name(nano/vim)"</code></li>
+            <li>check status: <code>git status</code> </li>
+            <li>pull to the separate branch: <code>git pull origin new-branch</code></li>
+            <li>push to the separate branch: <code>git pull origin new-branch</code></li>
+   
+        </ul>
+
+    <h1>Add to another remote server</h1>
+        <ul>
+            <li>create new remote server from the git project:<code>git remote add upstream https://github.com/MiguelCabailo/WebDevEssentials.git</code></li>
+            <li>check the remote servers: <code>git remote -v</code></li>
+        </ul>
     <h4>Other Git Commands</h4>
     <ul>
         <li>Check where the local repo will be pushed<code>git remote -v</code></li>
+        <li>Go back to a specific commit<code>git revert "asdf"</code></li>
+        <li>Undo latest commit: <code>git reset --soft Head~</code></li>
+        <li>Show Branches: <code>git branch</code></li>
     </ul>
-        
+
 </body>
 
 </html>

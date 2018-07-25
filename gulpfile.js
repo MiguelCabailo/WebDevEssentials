@@ -18,7 +18,7 @@ gulp.task('nodemon', function(cb){
 	});
 });
 
-// define a task
+// defines a task
 // compile Sass to CSS
 gulp.task('sass', function(){
     // source file
@@ -38,10 +38,10 @@ gulp.task('browser-sync', ['nodemon'], function(){
     });
 })
 
-// default task
+
 gulp.task('watch', function(){
     gulp.watch('./public/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['sass','browser-sync', 'watch']);
 

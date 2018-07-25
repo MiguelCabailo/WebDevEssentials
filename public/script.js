@@ -1,6 +1,6 @@
 // Index HTML on-load
-var indexHTML = function(){
-    (function(topics, buttonClass){
+var indexHTML = function () {
+    (function (topics, buttonClass) {
         var topicsAmount = topics.length;
 
         var currClass = 0
@@ -9,30 +9,31 @@ var indexHTML = function(){
         var myNode = document.querySelector('.content');
 
         // for each topic create a button and add functionality
-        for (var i = 0; i < topicsAmount; i++)
-        {
+        for (var i = 0; i < topicsAmount; i++) {
             var myElement = document.createElement("button");
-            
+
             myElement.textContent = topics[i];
             myElement.id = "Lesson" + [i + 1] + ".html";
             myElement.classList.add("btn");
             myElement.classList.add(buttonClass[currClass]);
 
-            if(currClass === buttonClass.length - 1){
+            if (currClass === buttonClass.length - 1) {
                 currClass = 0;
-            } else{
+            } else {
                 currClass++;
             }
 
             myNode.appendChild(myElement);
         }
 
-        myNode.addEventListener('click', function(e){
+        myNode.addEventListener('click', function (e) {
             location.href = e.target.id;
         });
 
-    })(["ManipulateTargetDom", "Closures", "IIFE's", "RelativeAbsolutePosition", "Callbacks", "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass and Gulp", "Git"],
-    ["btn-primary", "btn-secondary", "btn-success", "btn-danger", "btn-warning", "btn-info"]);
+    })(["ManipulateTargetDom", "Closures", "IIFE's", "RelativeAbsolutePosition", "Callbacks"
+    , "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass and Gulp"
+    , "Git", "Arrow Functions","CSS Variables", "NPM"],
+        ["btn-primary", "btn-secondary", "btn-success", "btn-danger", "btn-warning", "btn-info"]);
 }
 
 /*
@@ -155,16 +156,16 @@ function setupItem2() {
 /*
     Lesson 5 Callbacks
 */
-function lesson5HTML(){
+function lesson5HTML() {
     var tips = document.querySelectorAll('.hastip');
 
     // takes three arguments: event, callback and boolean
     // the event info goes to the e in this case
-    for(var i = 0; i < tips.length; i++){
-        tips[i].addEventListener('click', function(e){
+    for (var i = 0; i < tips.length; i++) {
+        tips[i].addEventListener('click', function (e) {
             e.target.querySelector('.tooltip').classList.toggle('active');
-        },false);
-    }    
+        }, false);
+    }
 }
 
 /*
@@ -176,21 +177,20 @@ function lesson5HTML(){
 */
 function lesson7HTML() {
 
-    
     // targets a function to be activated
-    function Hamburger(nodeName){
+    function Hamburger(nodeName) {
         var myNode = document.querySelector(nodeName + ' .hamburger');
 
         // building a constructor
         // will return something when this function is called
         return {
             // this is a method and is a closure since myNode is available here
-            activate: function(){
-                myNode.addEventListener('click', function(e){
+            activate: function () {
+                myNode.addEventListener('click', function (e) {
                     myNode.parentNode.querySelector(".navbar").classList.toggle('hidden');
                 }, false);
             },
-            hide: function(){
+            hide: function () {
                 myNode.parentNode.querySelector(".navbar").classList.add('hidden');
             }
         }
@@ -204,18 +204,59 @@ function lesson7HTML() {
     botMenu.hide();
 }
 
+/*
+    Lesson 11: Arrow Functions
+*/
+function lesson11HTML() {
 
+    var Hamburger = function (nodeName) {
+        var myNode = document.querySelector(nodeName + ' .hamburger');
 
+        return {
+            activate: () => myNode.addEventListener('click', e => myNode.parentNode.querySelector('.navbar').classList.toggle('hidden'), false),
+            // activate
+            hide: () => myNode.parentNode.querySelector('.navbar').classList.add('hidden')
+        } //return
+    } //Hamburger
+
+    var topMenu = new Hamburger('#topMenu');
+    topMenu.activate();
+
+    var bottomMenu = new Hamburger('#bottomMenu');
+    bottomMenu.activate();
+    bottomMenu.hide();
+}
+
+/*
+    Lesson 12: CSS Variables
+*/
+function lesson12HTML() {
+
+    var Hamburger = function(nodeName) {
+        var myNode = document.querySelector(nodeName + ' .hamburger');
+
+        return {
+            activate: () => myNode.addEventListener('click', e => myNode.parentNode.querySelector('.navbar').classList.toggle('hidden'), false), // activate
+            hide: () => myNode.parentNode.querySelector('.navbar').classList.add('hidden')
+        } //return
+    } //Hamburger
+
+    var topMenu = new Hamburger('#topMenu');
+    topMenu.activate();
+    var bottomMenu = new Hamburger('#bottomMenu');
+    bottomMenu.activate();
+    bottomMenu.hide();
+}
 
 window.onload = function () {
-    if (window.location.pathname === '/' | window.location.pathname === '/index.html' ){
+    if (window.location.pathname === '/' | window.location.pathname === '/index.html') {
         indexHTML();
     }
 
     // only load if on the lesson 1 page
     if (window.location.pathname === '/Lesson1.html')
         makeboxes(20);
-     
+
 
     //alert(window.location.href);
     if (window.location.pathname === '/Lesson2.html') {
@@ -231,32 +272,31 @@ window.onload = function () {
         setupItem2();
     }
 
-    if(window.location.pathname === '/Lesson3.html')
-    {
-        (function(howMany,colors){
-                var colorAmount = colors.length;
-                var currColor = 0;
-                var myElement;
-                var myNode = document.querySelector('.boxes');
-            
-                for (var i = 0; i < howMany; i++) {
-                    myElement = document.createElement('div');
-                    myElement.className = 'box';
-                    myElement.style = 'background-color:' + colors[currColor];
-            
-                    if (currColor === colorAmount - 1) {
-                        currColor = 0;
-                    } else {
-                        currColor++;
-                        myNode.appendChild(myElement);
-                    }
+    if (window.location.pathname === '/Lesson3.html') {
+        (function (howMany, colors) {
+            var colorAmount = colors.length;
+            var currColor = 0;
+            var myElement;
+            var myNode = document.querySelector('.boxes');
+
+            for (var i = 0; i < howMany; i++) {
+                myElement = document.createElement('div');
+                myElement.className = 'box';
+                myElement.style = 'background-color:' + colors[currColor];
+
+                if (currColor === colorAmount - 1) {
+                    currColor = 0;
+                } else {
+                    currColor++;
+                    myNode.appendChild(myElement);
                 }
-                //to remove an element target the parent element 
-                //then remove the target element
-                //no need to put it in the loop since it is the parent that is targeted
-                myNode.addEventListener("click", function (e) {
-                    e.target.parentNode.removeChild(e.target);
-                });        
+            }
+            //to remove an element target the parent element 
+            //then remove the target element
+            //no need to put it in the loop since it is the parent that is targeted
+            myNode.addEventListener("click", function (e) {
+                e.target.parentNode.removeChild(e.target);
+            });
         })(10, ["orange", "blue", "pink", "lime", "purple", "green", "red", "yellow"]);
     }
 
@@ -265,7 +305,7 @@ window.onload = function () {
     */
 
 
-    if(window.location.pathname === '/Lesson5.html'){
+    if (window.location.pathname === '/Lesson5.html') {
         lesson5HTML();
     }
 
@@ -273,7 +313,16 @@ window.onload = function () {
         No Lesson 6
     */
 
-    if(window.location.pathname === '/Lesson7.html'){
+    if (window.location.pathname === '/Lesson7.html') {
         lesson7HTML();
     }
+
+    if (window.location.pathname === '/Lesson11.html') {
+        lesson11HTML();
+    }
+
+    if (window.location.pathname === '/Lesson12.html') {
+        lesson12HTML();
+    }
+
 }
