@@ -32,7 +32,7 @@ var indexHTML = function () {
 
     })(["ManipulateTargetDom", "Closures", "IIFE's", "RelativeAbsolutePosition", "Callbacks"
     , "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass and Gulp"
-    , "Git", "Arrow Functions","CSS Variables", "NPM", "Ajax"],
+    , "Git", "Arrow Functions","CSS Variables","Ajax"],
         ["btn-primary", "btn-secondary", "btn-success", "btn-danger", "btn-warning", "btn-info"]);
 }
 
