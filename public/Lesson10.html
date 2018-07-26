@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <h1>Setting Git ast the integrated terminal in VSC</h1>
+    <p>on the "open user settings" paste "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"</p>
+
     <h1>Version Control/Git</h1>
     <ul>
         <li>saves the state of code at different times and allows the user to go back to that "commit"</li>
@@ -24,6 +27,7 @@
                 <li>branch is working on a new feature</li>
                 <li>merge if the branch is approved</li>
             </ul>
+            <li>3 buckets in git: unstaged/staged/commited</li>
         </li>
 
     </ul>
@@ -45,15 +49,20 @@
         <li>first commit for the staged files. Command: <code>git commit -m "First Commit"</code>. Now the first save point is made and git is tracking changes on those files</li>
 
         <li>add an origin command: <code>git remote add origin (paste github link here)</code></li>
-        
+
         <li>push branch to master branch in github. Command: <code>git push origin master</code></li>
     </ul>
 
     <h1>Making additional Commits</h1>
         <ul>
+            <li><code>git status</code> checks what files have been modified</li>
+
             <li>add the files to be staged <code>git add . or -A</code>.</li>
+
             <li>commit files with a message <code>git commit -m "your message"</code></li>
+
             <li>make a pull request first <code>git pull origin master</code></li>
+            
             <li>make a push request <code>git push origin master</code></li>
         </ul>
 
@@ -83,12 +92,48 @@
             <li>create new remote server from the git project:<code>git remote add upstream https://github.com/MiguelCabailo/WebDevEssentials.git</code></li>
             <li>check the remote servers: <code>git remote -v</code></li>
         </ul>
+
+    <h1>Going back to a commit</h1>
+        <ul>
+            <li>git log --pretty=oneline</li>
+            <li>git checkout (comit hash)</li>
+            <li>git checkout -b (branch name, original for example for a branch without new changes)</li>
+            <li>always work on a branch so when checking out a previous commit create a branch to that so you can move back and forth</li>
+        </ul>
+
+    <h4>Make Changes to an experimental branch and merge to master</h4>
+    <ul>
+        <li>go to master branch</li>
+        <li><code>git merge (branch name)</code></li>
+        <li>merges that branch with the current branch now</li>
+    </ul>
+
     <h4>Other Git Commands</h4>
     <ul>
-        <li>Check where the local repo will be pushed<code>git remote -v</code></li>
+        <li><a>https://git-scm.com/book/en/v1/Git-Basics-Viewing-the-Commit-History</a> for more info</li>
+        <li><code>git log</code> check the commits and gives their id</li>
+        <li><code>git log -p 2</code> shows the difference of the last 2 commits</li>
+        <li><code>git log --stat</code> shows a shorter summary of changes</li>
+        <li><code>git log --pretty=oneline</code></li>
+        <li><code>git log --pretty=short</code></li>
+        <li><code>git log --pretty=full</code></li>
+        <li><code>git log --pretty=fuller</code></li>
+        <li><code>git log --pretty=oneline --graph</code></li>
+
+        
+        <li><code>git status</code> shows the staged and unstaged files. All files must be staged before a commit</li>
+
+        <li>Check where the local repo will be pushqed<code>git remote -v</code></li>
+
         <li>Go back to a specific commit<code>git revert "asdf"</code></li>
+        <li><code>git checkout (commit hash)</code>: go to a specific commit</li>
+
         <li>Undo latest commit: <code>git reset --soft Head~</code></li>
+
         <li>Show Branches: <code>git branch</code></li>
+        <li><code>git branch (branch name)</code> creates a branch from the current checkout, have to change checkout to work on it</li>
+
+        <li><code>git reset HEAD file</code> to unstage a file</li>
     </ul>
 
 </body>
