@@ -32,7 +32,7 @@ var indexHTML = function () {
 
     })(["ManipulateTargetDom", "Closures", "IIFE's", "RelativeAbsolutePosition", "Callbacks"
     , "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass and Gulp"
-    , "Git", "Arrow Functions","CSS Variables","Ajax"],
+    , "Git", "Arrow Functions","CSS Variables", "Ajax"],
         ["btn-primary", "btn-secondary", "btn-success", "btn-danger", "btn-warning", "btn-info"]);
 }
 
@@ -248,6 +248,10 @@ function lesson12HTML() {
     bottomMenu.hide();
 }
 
+function lesson13HTML() {
+   //code here 
+}
+
 window.onload = function () {
     if (window.location.pathname === '/' | window.location.pathname === '/index.html') {
         indexHTML();
@@ -323,6 +327,10 @@ window.onload = function () {
 
     if (window.location.pathname === '/Lesson12.html') {
         lesson12HTML();
+    }
+
+    if (window.location.pathname === '/Lesson13.html') {
+        lesson13HTML();
     }
 
 }
