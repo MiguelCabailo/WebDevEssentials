@@ -249,7 +249,28 @@ function lesson12HTML() {
 }
 
 function lesson13HTML() {
-   //code here 
+    var data;
+    var request = new XMLHttpRequest();
+
+    // prepares the request
+    // 1) How : GET- we want something from the server
+    // 2) File: the file we want which is in js folder
+    request.open('GET', 'js/data.json');
+
+    // what happens when you get data back
+    // server will send info about the request
+    request.onreadystatechange = () => {
+        // 200 = success
+        // is the data ready? Does it reach status 4
+        if(request.status === 200 && 
+            request.readyState === 4){
+                
+                data = JSON.parse(request.responseText);
+                console.log(data);
+                console.log(request);
+        }
+    }
+    request.send();
 }
 
 window.onload = function () {
