@@ -1,4 +1,8 @@
 {
+  "welcome" : {
+    "welcomeMessage" : "Web Development Essentials",
+    "welcomeDetails" : "Web Development Essentials + update on web technologies + advanced topics"
+  },
   "calendar": [
     {
       "weekday": "Monday",

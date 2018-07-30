@@ -1,5 +1,43 @@
 // Index HTML on-load
 var indexHTML = function () {
+
+    // AJAX call for titles
+    (()=> {
+        // AJAX
+        var webTitle;
+        var webTitleDetails;
+
+        var myNode;
+        var data;
+        var request = new XMLHttpRequest();
+    
+        request.open('GET', 'js/data.json');
+    
+        request.onreadystatechange = () => {
+            if(request.status === 200 &&
+            request.readyState === 4){
+                data = JSON.parse(request.responseText);
+                console.log(data);
+                console.log(request);
+
+                webTitle = data.welcome.welcomeMessage;
+                webTitleDetails = data.welcome.welcomeDetails;
+
+                myNode = document.querySelector('#webTitle');
+                myNode.textContent = webTitle;
+
+                myNode = document.querySelector('#webTitleDetails');
+                myNode.textContent = webTitleDetails;
+            }
+        }
+        request.send();
+
+
+
+
+        
+    })();
+
     (function (topics, buttonClass) {
         var topicsAmount = topics.length;
 
@@ -34,6 +72,8 @@ var indexHTML = function () {
     , "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass and Gulp"
     , "Git", "Arrow Functions","CSS Variables", "Ajax"],
         ["btn-primary", "btn-secondary", "btn-success", "btn-danger", "btn-warning", "btn-info"]);
+    
+
 }
 
 /*
