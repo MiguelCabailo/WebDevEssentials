@@ -557,6 +557,9 @@ html#cssVariables .nav .navbar a:hover {
       background-color: var(--beige); } }
 
 /* hover */
+html#ajax .hide-me {
+  display: none; }
+
 .boxes {
   display: inline-block; }
 

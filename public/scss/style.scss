@@ -538,7 +538,11 @@ html#cssVariables .nav .navbar a:hover {
   }
 } /* hover */
 
-
+html#ajax {
+  .hide-me {
+    display:none;
+  }
+}
 
 
 .boxes {

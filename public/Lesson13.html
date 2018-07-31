@@ -1,4 +1,4 @@
-<html id="versionControl">
+<html id="ajax">
 
 <head>
     <title>13 Ajax</title>
@@ -8,12 +8,35 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
 
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    
+    
+    
 
     <script src="script.js"></script>
 
 </head>
 
 <body>
+
+    <div class="container">
+        <header>
+            <h1>JSON and AJAX</h1>
+            <button id="btn">Fetch Info for 3 New Animals</button>
+        </header>
+
+        <div id="animal-info">
+        </div>
+
+        <button type="submit" id="getSpeechToTextButton">Get and Log Speech To Text Transmission</button>
+
+    </div>
+
+    <hr>
+
     <div class="container">
         <h1>Ajax (Asyncronous Javascript and XML)</h1>
 
@@ -35,15 +58,13 @@
 
         <h2>Our Mission</h2>
         
-        
-        
         <p>Wisdom Pet Medicine strives to blend the best in traditional and alternative medicine in the diagnosis and treatment of companion animals including dogs, cats, birds, reptiles, rodents, and fish. We apply the wisdom garnered in the centuries old tradition of veterinary medicine, to find the safest treatments and cures.</p>
-        
-        
         
         <p>We strive to be your pet's medical experts from youth through the senior years. We build preventative health care plans for each and every one of our patients, based on breed, age, and sex, so that your pet receives the most appropriate care at crucial milestones. We want to give your pet a long and healthy life.</p>
         
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

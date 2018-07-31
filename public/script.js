@@ -2,20 +2,20 @@
 var indexHTML = function () {
 
     // AJAX call for titles
-    (()=> {
+    (() => {
         // AJAX
         var webTitle;
         var webTitleDetails;
-
         var myNode;
+
         var data;
         var request = new XMLHttpRequest();
-    
+
         request.open('GET', 'js/data.json');
-    
-        request.onreadystatechange = () => {
-            if(request.status === 200 &&
-            request.readyState === 4){
+
+        request.onreadystatechange = function () {
+            if (request.status === 200 &&
+                request.readyState === 4) {
                 data = JSON.parse(request.responseText);
                 console.log(data);
                 console.log(request);
@@ -31,11 +31,6 @@ var indexHTML = function () {
             }
         }
         request.send();
-
-
-
-
-        
     })();
 
     (function (topics, buttonClass) {
@@ -69,10 +64,10 @@ var indexHTML = function () {
         });
 
     })(["ManipulateTargetDom", "Closures", "IIFE's", "RelativeAbsolutePosition", "Callbacks"
-    , "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass and Gulp"
-    , "Git", "Arrow Functions","CSS Variables", "Ajax"],
+        , "Flexbox and Centering Content", "Constructor", "DebuggingCss", "Sass and Gulp"
+        , "Git", "Arrow Functions", "CSS Variables", "Ajax"],
         ["btn-primary", "btn-secondary", "btn-success", "btn-danger", "btn-warning", "btn-info"]);
-    
+
 
 }
 
@@ -272,7 +267,7 @@ function lesson11HTML() {
 */
 function lesson12HTML() {
 
-    var Hamburger = function(nodeName) {
+    var Hamburger = function (nodeName) {
         var myNode = document.querySelector(nodeName + ' .hamburger');
 
         return {
@@ -289,28 +284,95 @@ function lesson12HTML() {
 }
 
 function lesson13HTML() {
-    var data;
-    var request = new XMLHttpRequest();
 
-    // prepares the request
-    // 1) How : GET- we want something from the server
-    // 2) File: the file we want which is in js folder
-    request.open('GET', 'js/data.json');
+    (function () {
 
-    // what happens when you get data back
-    // server will send info about the request
-    request.onreadystatechange = () => {
-        // 200 = success
-        // is the data ready? Does it reach status 4
-        if(request.status === 200 && 
-            request.readyState === 4){
-                
+
+        var data;
+        var request = new XMLHttpRequest();
+
+        // prepares the request
+        // 1) How : GET- we want something from the server
+        // 2) File: the file we want which is in js folder
+        request.open('GET', 'js/data.json');
+
+        // what happens when you get data back
+        // server will send info about the request
+        request.onreadystatechange = () => {
+            // 200 = success
+            // is the data ready? Does it reach status 4
+            if (request.status === 200 &&
+                request.readyState === 4) {
+
                 data = JSON.parse(request.responseText);
                 console.log(data);
                 console.log(request);
+            }
         }
-    }
-    request.send();
+        request.send();
+    })();
+
+
+    (function () {
+        
+        var pageCounter = 1;
+        var btn = document.querySelector('#btn');
+        var animalContainer = document.querySelector('#animal-info');
+
+        btn.addEventListener('click', function () {
+            // this tool is used to download JSON data
+            var ourRequest = new XMLHttpRequest();
+
+            // 1) send or recieve?: GET
+            // 2) URL we will talk to. : https://learnwebcode.github.io/json-example/animals-1.json
+            ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + pageCounter + '.json');
+
+            ourRequest.onload = function () {
+                // response text is our data
+                // we need to tell the browser that this is JSON data
+                var ourData = JSON.parse(ourRequest.responseText);
+                renderHTML(ourData);
+            }
+            ourRequest.send();
+            pageCounter++;
+
+            if (pageCounter > 3) {
+                btn.classList.add("hide-me");
+            }
+        }), false;
+
+        // function that creates and adds HTML to the page
+        function renderHTML(data) {
+
+            var htmlString = "";
+
+            for (i = 0; i < data.length; i++) {
+                htmlString = "<p>" + data[i].name + " is a " + data[i].species + ".</p>";
+                //animalContainer.innerHTML += "<p>" + data[i].name + " is a " + data[i].species + ".</p>";
+
+                animalContainer.insertAdjacentHTML('beforeend', htmlString);
+            }
+
+        }
+    })();
+
+    var button = document.querySelector("#getSpeechToTextButton");
+
+    button.addEventListener('click', function () {
+        // request to sit 737 speech to text service
+
+        var data;
+        var request = new XMLHttpRequest();
+
+        request.open('GET', 'https://sit737-speechtotext.mybluemix.net/retrieveall');
+
+        request.onload = () => {
+            data = JSON.parse(request.responseText);
+            console.log(request);
+            console.log(data);
+        }
+        request.send();
+    });
 }
 
 window.onload = function () {
@@ -321,7 +383,6 @@ window.onload = function () {
     // only load if on the lesson 1 page
     if (window.location.pathname === '/Lesson1.html')
         makeboxes(20);
-
 
     //alert(window.location.href);
     if (window.location.pathname === '/Lesson2.html') {
